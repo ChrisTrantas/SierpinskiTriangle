@@ -10,29 +10,78 @@ void AppClass::InitVariables(void)
 	//Reserve Memory for a MyMeshClass object
 	m_pMesh = new MyMesh();
 
+
+	// top
 	m_pMesh->AddVertexPosition(vector3(-5.0f, 0.0f, 0.0f));
 	m_pMesh->AddVertexPosition(vector3(5.0f, 0.0f, 0.0f));
 	m_pMesh->AddVertexPosition(vector3(0.0f, 5.0f, 0.0f));
 
+	m_pMesh->AddVertexColor(REGREEN);
+	m_pMesh->AddVertexColor(RERED);
+	m_pMesh->AddVertexColor(REBLUE);
+
+	// Bottom left
 	m_pMesh->AddVertexPosition(vector3(-10.0f, -5.0f, 0.0f));
 	m_pMesh->AddVertexPosition(vector3(0.0f, -5.0f, 0.0f));
 	m_pMesh->AddVertexPosition(vector3(-5.0f, 0.0f, 0.0f));
 
+	m_pMesh->AddVertexColor(REGREEN);
+	m_pMesh->AddVertexColor(RERED);
+	m_pMesh->AddVertexColor(REBLUE);
+
+	// Bottom Right
 	m_pMesh->AddVertexPosition(vector3(0.0f, -5.0f, 0.0f));
 	m_pMesh->AddVertexPosition(vector3(10.0f, -5.0f, 0.0f));	
 	m_pMesh->AddVertexPosition(vector3(5.0f, 0.0f, 0.0f));
+
+	m_pMesh->AddVertexColor(REGREEN);
+	m_pMesh->AddVertexColor(RERED);
+	m_pMesh->AddVertexColor(REBLUE);
+	
 
 	m_pMesh->AddVertexPosition(vector3(-15.0f, -10.0f, 0.0f));
 	m_pMesh->AddVertexPosition(vector3(-5.0f, -10.0f, 0.0f));
 	m_pMesh->AddVertexPosition(vector3(-10.0f, -5.0f, 0.0f));
 
+	m_pMesh->AddVertexColor(REGREEN);
+	m_pMesh->AddVertexColor(RERED);
+	m_pMesh->AddVertexColor(REBLUE);
+
 	m_pMesh->AddVertexPosition(vector3(5.0f, -10.0f, 0.0f));
 	m_pMesh->AddVertexPosition(vector3(15.0f, -10.0f, 0.0f));
 	m_pMesh->AddVertexPosition(vector3(10.0f, -5.0f, 0.0f));
 
+	m_pMesh->AddVertexColor(REGREEN);
+	m_pMesh->AddVertexColor(RERED);
+	m_pMesh->AddVertexColor(REBLUE);
+
 	m_pMesh->AddVertexPosition(vector3(10.0f, -15.0f, 0.0f));
 	m_pMesh->AddVertexPosition(vector3(20.0f, -15.0f, 0.0f));
 	m_pMesh->AddVertexPosition(vector3(15.0f, -10.0f, 0.0f));
+
+	m_pMesh->AddVertexColor(REGREEN);
+	m_pMesh->AddVertexColor(RERED);
+	m_pMesh->AddVertexColor(REBLUE);
+
+	m_pMesh->AddVertexPosition(vector3(-20.0f, -15.0f, 0.0f));
+	m_pMesh->AddVertexPosition(vector3(-10.0f, -15.0f, 0.0f));
+	m_pMesh->AddVertexPosition(vector3(-15.0f, -10.0f, 0.0f));
+
+	m_pMesh->AddVertexColor(REGREEN);
+	m_pMesh->AddVertexColor(RERED);
+	m_pMesh->AddVertexColor(REBLUE);
+
+	m_pMesh->AddVertexPosition(vector3(-10.0f, -15.0f, 0.0f));
+	m_pMesh->AddVertexPosition(vector3(0.0f, -15.0f, 0.0f));
+	m_pMesh->AddVertexPosition(vector3(-5.0f, -10.0f, 0.0f));
+
+	m_pMesh->AddVertexColor(REGREEN);
+	m_pMesh->AddVertexColor(RERED);
+	m_pMesh->AddVertexColor(REBLUE);
+
+	m_pMesh->AddVertexPosition(vector3(0.0f, -15.0f, 0.0f));
+	m_pMesh->AddVertexPosition(vector3(10.0f, -15.0f, 0.0f));
+	m_pMesh->AddVertexPosition(vector3(5.0f, -10.0f, 0.0f));
 
 	m_pMesh->AddVertexColor(REGREEN);
 	m_pMesh->AddVertexColor(RERED);
@@ -43,10 +92,10 @@ void AppClass::InitVariables(void)
 	m_fMatrixArray = new float[m_nObjects * 16];
 	for (int nObject = 0; nObject < m_nObjects; nObject++)
 	{
+
 		const float* m4MVP = glm::value_ptr(
-			glm::translate(vector3(5.0f * -nObject, 5.0f * -nObject, 1.0f))); //*
-			//glm::rotate(REIDENTITY, nObject * 5.0f, REAXISZ)
-			//);
+			
+			glm::translate(vector3(0 * -nObject, 0 * -nObject, 0.0f))); 
 		memcpy(&m_fMatrixArray[nObject * 16], m4MVP, 16 * sizeof(float));
 	}
 
